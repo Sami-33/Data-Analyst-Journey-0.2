@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst Journey Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+            padding: 0 1.5rem;
+        }
+        .accordion-button.open .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto max-w-4xl p-4 sm:p-6 md:p-8">
+        
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-900">Your Data Analyst Journey</h1>
+            <p class="text-slate-600 mt-2">Track your progress from beginner to job-ready in 6 months.</p>
+        </header>
+
+        <!-- Overall Progress -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm mb-8">
+            <h2 class="text-lg font-semibold mb-3 text-slate-900">Overall Progress</h2>
+            <div class="w-full bg-slate-200 rounded-full h-4">
+                <div id="overall-progress-bar" class="bg-indigo-600 h-4 rounded-full transition-all duration-500" style="width: 0%;"></div>
+            </div>
+            <p id="overall-progress-text" class="text-right text-sm font-medium text-slate-600 mt-2">0% Complete</p>
+        </div>
+
+        <!-- Main Content: Months -->
+        <main id="months-container" class="space-y-4">
+            
+            <!-- Month 1 -->
+            <div class="month-section bg-white rounded-2xl shadow-sm overflow-hidden" data-month="1">
+                <button class="accordion-button w-full p-6 text-left flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Month 1: Mastering the Fundamentals</h3>
+                        <p class="text-slate-500 text-sm mt-1">Excel & Power BI</p>
+                    </div>
+                    <svg class="accordion-icon w-6 h-6 text-slate-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="pb-6">
+                        <div class="mb-4">
+                            <div class="w-full bg-slate-100 rounded-full h-2.5">
+                                <div class="month-progress-bar bg-indigo-500 h-2.5 rounded-full" style="width: 0%;"></div>
+                            </div>
+                            <p class="month-progress-text text-right text-xs text-slate-500 mt-1">0%</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                            <div class="learnings">
+                                <h4 class="font-semibold mb-2 text-slate-700">Key Learnings</h4>
+                                <ul class="space-y-2">
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Advanced Excel Formulas</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Excel PivotTables & Charts</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Excel Power Query</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Power BI: DAX Basics</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Power BI: Data Modeling</span></label></li>
+                                </ul>
+                            </div>
+                            <div class="tasks">
+                                <h4 class="font-semibold mb-2 text-slate-700">Actionable Tasks</h4>
+                                <ul class="space-y-2">
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Find messy sales dataset</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Clean dataset in Excel</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Build Power BI dashboard</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Summarize dashboard findings</span></label></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Month 2 -->
+            <div class="month-section bg-white rounded-2xl shadow-sm overflow-hidden" data-month="2">
+                <button class="accordion-button w-full p-6 text-left flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Month 2: The Language of Data</h3>
+                        <p class="text-slate-500 text-sm mt-1">SQL</p>
+                    </div>
+                    <svg class="accordion-icon w-6 h-6 text-slate-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="pb-6">
+                        <div class="mb-4">
+                            <div class="w-full bg-slate-100 rounded-full h-2.5">
+                                <div class="month-progress-bar bg-indigo-500 h-2.5 rounded-full" style="width: 0%;"></div>
+                            </div>
+                            <p class="month-progress-text text-right text-xs text-slate-500 mt-1">0%</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                            <div class="learnings">
+                                <h4 class="font-semibold mb-2 text-slate-700">Key Learnings</h4>
+                                <ul class="space-y-2">
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Core `SELECT` statement</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Data Aggregation (`GROUP BY`)</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">`HAVING` clause</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Joining Tables (`INNER`, `LEFT`)</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Primary & Foreign Keys</span></label></li>
+                                </ul>
+                            </div>
+                            <div class="tasks">
+                                <h4 class="font-semibold mb-2 text-slate-700">Actionable Tasks</h4>
+                                <ul class="space-y-2">
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Sign up for SQL practice site</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Complete 20+ Easy SQL challenges</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Complete 10+ Medium SQL challenges</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Practice with a sample database</span></label></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Month 3 -->
+            <div class="month-section bg-white rounded-2xl shadow-sm overflow-hidden" data-month="3">
+                <button class="accordion-button w-full p-6 text-left flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Month 3: Advanced SQL & Stats</h3>
+                        <p class="text-slate-500 text-sm mt-1">Deeper Data Understanding</p>
+                    </div>
+                    <svg class="accordion-icon w-6 h-6 text-slate-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="pb-6">
+                        <div class="mb-4">
+                            <div class="w-full bg-slate-100 rounded-full h-2.5">
+                                <div class="month-progress-bar bg-indigo-500 h-2.5 rounded-full" style="width: 0%;"></div>
+                            </div>
+                            <p class="month-progress-text text-right text-xs text-slate-500 mt-1">0%</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                            <div class="learnings">
+                                <h4 class="font-semibold mb-2 text-slate-700">Key Learnings</h4>
+                                <ul class="space-y-2">
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Subqueries & CTEs</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">SQL Window Functions</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Descriptive Statistics</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Correlation vs. Causation</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Probability Distributions</span></label></li>
+                                </ul>
+                            </div>
+                            <div class="tasks">
+                                <h4 class="font-semibold mb-2 text-slate-700">Actionable Tasks</h4>
+                                <ul class="space-y-2">
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Solve 5 advanced SQL problems</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Calculate stats for a dataset</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Write summary of stats</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Watch StatQuest videos</span></label></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Month 4 -->
+            <div class="month-section bg-white rounded-2xl shadow-sm overflow-hidden" data-month="4">
+                <button class="accordion-button w-full p-6 text-left flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Month 4: Programming for Analysts</h3>
+                        <p class="text-slate-500 text-sm mt-1">Python</p>
+                    </div>
+                    <svg class="accordion-icon w-6 h-6 text-slate-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="pb-6">
+                        <div class="mb-4">
+                            <div class="w-full bg-slate-100 rounded-full h-2.5">
+                                <div class="month-progress-bar bg-indigo-500 h-2.5 rounded-full" style="width: 0%;"></div>
+                            </div>
+                            <p class="month-progress-text text-right text-xs text-slate-500 mt-1">0%</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                            <div class="learnings">
+                                <h4 class="font-semibold mb-2 text-slate-700">Key Learnings</h4>
+                                <ul class="space-y-2">
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Python Basics (loops, functions)</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Pandas DataFrames & Series</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Pandas Data Selection & Filtering</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Pandas Data Cleaning</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Matplotlib & Seaborn basics</span></label></li>
+                                </ul>
+                            </div>
+                            <div class="tasks">
+                                <h4 class="font-semibold mb-2 text-slate-700">Actionable Tasks</h4>
+                                <ul class="space-y-2">
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Create GitHub account</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Perform EDA in Jupyter Notebook</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Document EDA process</span></label></li>
+                                    <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Push notebook to GitHub</span></label></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Month 5 -->
+            <div class="month-section bg-white rounded-2xl shadow-sm overflow-hidden" data-month="5">
+                <button class="accordion-button w-full p-6 text-left flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Month 5: Build Your Portfolio</h3>
+                        <p class="text-slate-500 text-sm mt-1">Showcasing Your Skills</p>
+                    </div>
+                    <svg class="accordion-icon w-6 h-6 text-slate-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="pb-6">
+                        <div class="mb-4">
+                            <div class="w-full bg-slate-100 rounded-full h-2.5">
+                                <div class="month-progress-bar bg-indigo-500 h-2.5 rounded-full" style="width: 0%;"></div>
+                            </div>
+                            <p class="month-progress-text text-right text-xs text-slate-500 mt-1">0%</p>
+                        </div>
+                        <div class="tasks">
+                            <h4 class="font-semibold mb-2 text-slate-700">Actionable Tasks</h4>
+                            <ul class="space-y-2">
+                                <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Complete Project 1 (BI-Focused)</span></label></li>
+                                <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Write detailed README for Project 1</span></label></li>
+                                <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Complete Project 2 (Python-Focused)</span></label></li>
+                                <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Ensure Project 2 notebook is clean & commented</span></label></li>
+                                <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Write blog/LinkedIn post for a project</span></label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Month 6 -->
+            <div class="month-section bg-white rounded-2xl shadow-sm overflow-hidden" data-month="6">
+                <button class="accordion-button w-full p-6 text-left flex justify-between items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Month 6: Job Readiness</h3>
+                        <p class="text-slate-500 text-sm mt-1">Getting Hired</p>
+                    </div>
+                    <svg class="accordion-icon w-6 h-6 text-slate-500 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="accordion-content">
+                    <div class="pb-6">
+                        <div class="mb-4">
+                            <div class="w-full bg-slate-100 rounded-full h-2.5">
+                                <div class="month-progress-bar bg-indigo-500 h-2.5 rounded-full" style="width: 0%;"></div>
+                            </div>
+                            <p class="month-progress-text text-right text-xs text-slate-500 mt-1">0%</p>
+                        </div>
+                        <div class="tasks">
+                            <h4 class="font-semibold mb-2 text-slate-700">Actionable Tasks</h4>
+                            <ul class="space-y-2">
+                                <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Create master resume for data analyst roles</span></label></li>
+                                <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Optimize LinkedIn profile</span></label></li>
+                                <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Practice 10+ SQL interview questions</span></label></li>
+                                <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Practice 5+ case study questions</span></label></li>
+                                <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Network with 5+ professionals</span></label></li>
+                                <li><label class="flex items-center space-x-3"><input type="checkbox" class="task-checkbox h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"> <span class="text-slate-600 text-sm">Apply to 10+ jobs</span></label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center mt-12">
+            <p class="text-slate-500 text-sm">Good luck on your journey! Stay consistent and keep learning.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const STORAGE_KEY = 'dataAnalystTrackerProgress';
+
+            // --- Accordion Functionality ---
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    button.classList.toggle('open');
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        content.style.padding = '0 1.5rem';
+                    } else {
+                        content.style.padding = '0 1.5rem 1.5rem 1.5rem';
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+            
+            // --- Progress Calculation and Persistence ---
+            const allCheckboxes = document.querySelectorAll('.task-checkbox');
+            
+            function updateProgress() {
+                const progressData = {};
+                let totalChecked = 0;
+                let totalTasks = allCheckboxes.length;
+
+                // Calculate progress for each month
+                document.querySelectorAll('.month-section').forEach(section => {
+                    const month = section.dataset.month;
+                    const monthCheckboxes = section.querySelectorAll('.task-checkbox');
+                    const checkedInMonth = section.querySelectorAll('.task-checkbox:checked');
+                    
+                    const monthTotal = monthCheckboxes.length;
+                    const monthCheckedCount = checkedInMonth.length;
+                    
+                    const percentage = monthTotal > 0 ? (monthCheckedCount / monthTotal) * 100 : 0;
+                    
+                    section.querySelector('.month-progress-bar').style.width = `${percentage}%`;
+                    section.querySelector('.month-progress-text').textContent = `${Math.round(percentage)}%`;
+
+                    // Store checkbox states for this month
+                    progressData[month] = [];
+                    monthCheckboxes.forEach((cb, index) => {
+                        if (cb.checked) {
+                            progressData[month].push(index);
+                        }
+                    });
+                });
+
+                // Calculate overall progress
+                const totalCheckedCount = document.querySelectorAll('.task-checkbox:checked').length;
+                const overallPercentage = totalTasks > 0 ? (totalCheckedCount / totalTasks) * 100 : 0;
+
+                document.getElementById('overall-progress-bar').style.width = `${overallPercentage}%`;
+                document.getElementById('overall-progress-text').textContent = `${Math.round(overallPercentage)}% Complete`;
+                
+                // Save to localStorage
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(progressData));
+            }
+
+            function loadProgress() {
+                const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
+                if (!savedData) return;
+
+                document.querySelectorAll('.month-section').forEach(section => {
+                    const month = section.dataset.month;
+                    if (savedData[month]) {
+                        const monthCheckboxes = section.querySelectorAll('.task-checkbox');
+                        savedData[month].forEach(checkedIndex => {
+                            if (monthCheckboxes[checkedIndex]) {
+                                monthCheckboxes[checkedIndex].checked = true;
+                            }
+                        });
+                    }
+                });
+
+                updateProgress();
+            }
+
+            // --- Event Listeners ---
+            allCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updateProgress);
+            });
+
+            // --- Initial Load ---
+            loadProgress();
+
+            // Open the first month by default on first visit
+            if (!localStorage.getItem(STORAGE_KEY)) {
+                 accordionButtons[0].click();
+            }
+        });
+    </script>
+</body>
+</html>
